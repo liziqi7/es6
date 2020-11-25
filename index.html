@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #js-box {
+                width: 200px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="js-box"></div>
+        <script>
+            // setTimeout(function () {
+            //     console.log(1);
+            // }, 2000);
+            // function sleep(duration) {
+            //     return new Promise(function (resolve, reject) {
+            //         console.log('Promise');
+            //         setTimeout(resolve, duration);
+            //         console.log('resolve');
+            //     });
+            // }
+            // async function foo(name) {
+            //     await sleep(2000);
+            //     console.log(name);
+            // }
+            // async function foo2() {
+            //     await foo('a');
+            //     await foo('b');
+            // }
+            // sleep(2000).then(function () {
+            //     console.log('3');
+            //     foo2();
+            // });
+
+            // setTimeout(function () {
+            //     console.log(2);
+            // }, 1000);
+
+            // setTimeout(() => console.log('d'), 0);
+            // var r1 = new Promise(function (resolve, reject) {
+            //     resolve();
+            // });
+            // // 创建微任务
+            // r1.then(() => {
+            //     var begin = Date.now();
+            //     while (Date.now() - begin < 3000);
+            //     console.log('c1');
+            //     new Promise(function (resolve, reject) {
+            //         resolve();
+            //     }).then(() => console.log('c2'));
+            // });
+            // // 创建宏任务
+            // r1.then(() => {
+            //     var begin = Date.now();
+            //     setTimeout(function () {
+            //         console.log('c1');
+            //     }, 0);
+            //     new Promise(function (resolve, reject) {
+            //         resolve();
+            //     }).then(() => console.log('c2'));
+            // });
+
+            // function sleep(duration) {
+            //     return new Promise(function (resolve, reject) {
+            //         setTimeout(resolve, duration);
+            //     });
+            // }
+            // async function foo() {
+            //     console.log('a');
+            //     setTimeout(function () {
+            //         console.log('c1');
+            //     }, 1000);
+            //     await sleep(2000).then(function () {
+            //         console.log('b2');
+            //         setTimeout(function () {
+            //             console.log('c3');
+            //         }, 0);
+            //     });
+            //     setTimeout(function () {
+            //         console.log('c2');
+            //     }, 0);
+            //     console.log('b');
+            // }
+            // foo();
+
+            // 'use strict';
+            // function showThis() {
+            //     console.log(this);
+            // }
+
+            // var o = {
+            //     showThis: showThis,
+            // };
+
+            // showThis(); // undefined
+            // o.showThis(); // o
+            // var i = 0;
+            // function foo() {
+            //     try {
+            //         i = 2;
+            //         throw 'aaa';
+            //         i = 3;
+            //     } catch (e) {
+            //         // throw 'tttå';
+            //         console.log('catch', e);
+            //     } finally {
+            //         console.log('finally');
+            //     }
+            // }
+            // foo();
+            // console.log(i);
+
+            // outer: while (true) {
+            //     console.log('outer');
+            //     inner: while (true) {
+            //         console.log('inner');
+            //         break outer;
+            //         console.log('inner break outer');
+            //     }
+            //     console.log('outer2');
+            // }
+            // console.log('finished');
+            function f() {
+                console.log(arguments);
+            }
+            var b = 1;
+            var d = 2;
+            f`a${b}c${d}e`;
+        </script>
+    </body>
+</html>
